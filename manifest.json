@@ -1,0 +1,48 @@
+{
+   "manifest_version": 2,
+   "name": "__MSG_name__",
+   "version": "1.8.8",
+
+   "default_locale": "en",
+   "description": "__MSG_description__",
+
+   "icons": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+   },
+
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon48.png",
+         "38": "images/icon48.png"
+      },
+      "default_popup": "popup.html"
+   },
+
+   "background": {
+      "scripts": [
+         "js/underscore.js",
+         "js/dictionary.js",
+         "js/background.js"
+      ],
+      "persistent": false
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "css/fullScreener.css" ],
+      "js": [ "js/fullScreener.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCYJl5QMrxNr6YD8WTPof3+gfyzYxYY/hZMe/Jew9yLXGTtvsmTAfhs0I2gqq5fmMcZlKOuhV+2jz1xdlnC6oP5gLvt5+Mdm4RypW6EK/LMIXjtMuLWp7BukQyYMu1KwWT5MUozVF8hiRFLHXRZ7vH7pJ/F2jkgpf66z7wIH+SqmQIDAQAB",
+   "permissions": [ 
+      "bookmarks",
+      "tabs",
+      "contextMenus",
+      "http://*/*", 
+      "https://*/*" 
+   ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
